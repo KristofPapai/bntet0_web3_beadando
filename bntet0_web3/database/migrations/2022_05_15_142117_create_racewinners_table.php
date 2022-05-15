@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer('riderID')->unsigned();
             $table->integer('gpID')->unsigned();
-
+            $table->foreign('riderID')->references('id')->on('riders');
+            $table->foreign('gpID')->references('id')->on('races');
         });
     }
 
