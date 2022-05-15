@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MyLearning</title>
+    <title>BNTET0_web3</title>
 
     <meta name="description" content="">
 
@@ -34,11 +34,12 @@
         }
     </style>
 </head>
-<body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0 w-full h-screen bg-gradient-to-r from-indigo-500 via-red-500 to-yellow-500 background-animate" style="font-family:'Lato',sans-serif;">
+<body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0 w-full h-screen bg-gradient-to-r from-red-900 via-yellow-600 to-gray-500 background-animate" style="font-family:'Lato',sans-serif;">
     <header class="max-w-lg mx-auto">
         <a href="#">
-            <h1 class="text-4xl font-bold text-white text-center">MyLearning</h1>
-            <h1 class="text-2xl text-white text-center">Knowledge is power</h1>
+            <h1 class="text-4xl font-bold text-white text-center">MotoGP</h1>
+            <h1 class="text-2xl text-white text-center">Készítette:</h1>
+            <h1 class="text-2xl text-white text-center">Pápai Kristóf Levente - BNTET0</h1>
         </a>
     </header>
 
