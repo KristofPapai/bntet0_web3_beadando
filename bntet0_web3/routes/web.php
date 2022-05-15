@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => [GuestMiddleware::class]], function() {
+    Route::get('/login', [MainController::class, 'login']);
+    Route::post('/checklogin', [MainController::class, 'checklogin']);
+    Route::get('/register', [RegisterController::class,'register']);
+    Route::post('/checkregister', [RegisterController::class, 'checkregister']);
 });
