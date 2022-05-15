@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -14,14 +16,21 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('username',6)->primary();
+            $table->string('password',150);
+            $table->tinyInteger('legitimacy')->default(0);
         });
+
+        DB::table('users')->insert([
+            'username'=>'admin',
+            'password'=> Hash::make('admin'),
+            'legitimacy' => 1,
+        ]);
+        DB::table('users')->insert([
+            'username'=>'user',
+            'password'=> Hash::make('user'),
+            'legitimacy' => 0,
+        ]);
     }
 
     /**
