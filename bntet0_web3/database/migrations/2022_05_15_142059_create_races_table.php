@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('races', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id')->unsigned()->primary();
             $table->string('gpName',100);
             $table->string('gpLocation',100);
         });

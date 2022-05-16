@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('racewinners', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id')->unsigned()->primary();
             $table->integer('riderID')->unsigned();
             $table->integer('gpID')->unsigned();
             $table->foreign('riderID')->references('id')->on('riders');

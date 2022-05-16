@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('racecalendar', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id')->primary();
             $table->integer('gpID')->unsigned();
             $table->string('gpDate',100);
         });
