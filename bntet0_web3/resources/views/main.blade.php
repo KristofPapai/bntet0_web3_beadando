@@ -33,7 +33,7 @@
         }
     </style>  
 </head>
-<body class="body-bg min-h-screen  pb-6 px-2 md:px-0 bg-gradient-to-r from-indigo-500 via-red-500 to-yellow-500 background-animate" style="font-family:'Lato',sans-serif;">
+<body class="body-bg min-h-screen  pb-6 px-2 md:px-0 bg-gradient-to-r from-red-900 via-yellow-600 to-gray-500 background-animate" style="font-family:'Lato',sans-serif;">
 <?php
     $auth = Auth::user()->auth;
 ?>
@@ -55,7 +55,9 @@
     </ul>
 </nav>
 
-
+<main class="max-w-6xl mx-auto p-8 md:p-12 my-10 rounded-lg">
+          <img src="https://i.imgur.com/LqjN9MU.png" class="max-w-full h-auto" alt="motogp logo" referrerpolicy="no-referrer" />
+    </main>
 
   <script>
     function Menu(e){
