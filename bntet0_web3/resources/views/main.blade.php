@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <title>E-Learning</title>
+    <title>BNTET0_web3</title>
     <style>
         body {
             font-family: "Inter", sans-serif;
@@ -49,6 +49,24 @@
     </div>
 
     <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+      <li class="mx-4 my-6 md:my-0">
+        <a href="{{ asset('listcourses') }}" class="text-2xl hover:text-yellow-500 duration-500 font-bold">Kurzusok</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <select onchange="window.location.href=this.value;" class="text-2xl hover:text-yellow-500 duration-500 font-bold w-52">
+            <option hidden value="" disabled selected >Beállítások</option>
+            <optgroup label="User felületek">
+                <option value="{{route('options')}}">Beállítások</option>
+            </optgroup>
+            @if ($user->legitimacy == 1)
+                <optgroup label="Admin felületek">
+                  <option value="{{asset('courseoptions')}}">Kurzus hozzárendelés</option>
+                  <option value="{{asset('addcourse')}}">Kurzus létrehozása</option>
+                  <option value="{{asset('useroptions')}}">Beállítások</option>
+                </optgroup>
+            @endif
+        </select>
+      </li>
       <li>
         <a href="{{asset('logout')}}" class="text-2xl hover:text-yellow-500 duration-500 font-bold w-52">Kijelentkezés</a>
       </li>

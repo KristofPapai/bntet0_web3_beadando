@@ -18,6 +18,22 @@ return new class extends Migration
             $table->integer('gpID')->unsigned();
             $table->string('gpDate',100);
         });
+
+        DB::table('racecalendar')->insert([
+            'id'=>'1',
+            'gpID'=>'1',
+            'gpDate'=> 'Mar 06',
+        ]);
+        DB::table('racecalendar')->insert([
+            'id'=>'2',
+            'gpID'=>'2',
+            'gpDate'=> 'Mar 20',
+        ]);
+        DB::table('racecalendar')->insert([
+            'id'=>'3',
+            'gpID'=>'3',
+            'gpDate'=> 'Apr 03',
+        ]);
     }
 
     /**

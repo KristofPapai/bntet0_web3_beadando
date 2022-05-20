@@ -19,6 +19,33 @@ return new class extends Migration
             $table->integer('riderAge');
             $table->string('riderTeam',100);
         });
+
+        DB::table('riders')->insert([
+            'id'=>'1',
+            'riderName'=>'Andrea Dovizioso',
+            'riderAge'=> '30',
+            'riderTeam'=> 'WithU Yamaha RNF MotoGP Team',
+        ]);
+        DB::table('riders')->insert([
+            'id'=>'2',
+            'riderName'=>'Maverick Vinales',
+            'riderAge'=> '31',
+            'riderTeam'=> 'Aprilia Racing',
+        ]);
+        DB::table('riders')->insert([
+            'id'=>'3',
+            'riderName'=>'Fabio Quartararo',
+            'riderAge'=> '28',
+            'riderTeam'=> 'Monster Energy Yamaha MotoGP',
+        ]);
+
+        DB::table('riders')->insert([
+            'id'=>'4',
+            'riderName'=>'Enea Bastianini',
+            'riderAge'=> '26',
+            'riderTeam'=> 'Gresini Racing MotoGP',
+        ]);
+        
     }
 
     /**

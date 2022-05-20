@@ -18,6 +18,23 @@ return new class extends Migration
             $table->string('gpName',100);
             $table->string('gpLocation',100);
         });
+
+
+        DB::table('races')->insert([
+            'id'=>'1',
+            'gpName'=>'Grand Prix of Qatar',
+            'gpLocation'=> 'Lusail International Circuit',
+        ]);
+        DB::table('races')->insert([
+            'id'=>'2',
+            'gpName'=>'Pertamina Grand Prix of Indonesia',
+            'gpLocation'=> 'Pertamina Mandalika Circuit',
+        ]);
+        DB::table('races')->insert([
+            'id'=>'3',
+            'gpName'=>'Gran Premio Michelin® de la República Argentina',
+            'gpLocation'=> 'Termas de Río Hondo',
+        ]);
     }
 
     /**
