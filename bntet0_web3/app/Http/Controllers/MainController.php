@@ -25,11 +25,11 @@ class MainController extends Controller
     function checklogin(Request $request)
     {
         $this->validate($request, [
-            'neptun'   => ['required'],
+            'username'   => ['required'],
             'password'  => ['required','min:3']
         ]);
         $user = array(
-            'neptun' => $request->get('neptun'),
+            'username' => $request->get('username'),
             'password' => $request->get('password')
         );
         if(Auth::attempt($user))
@@ -42,25 +42,11 @@ class MainController extends Controller
         }
     }
 
-
-    function checkpassword (Request $request) {
-        $user = user::findorFail($request['neptun']);
-        $old_password = Hash::make($request['old_password']);
-        if($old_password == $user->password){
-            return back()->with('error', 'Password not matching');
-        }
-        user::where('neptun', $user->neptun)->update([
-            'password'=> Hash::make($request['new_password']),
-            'name'=>$request['name'],
-            'code'=>0,
-            'email'=>$user->email,
-            'legitimacy'=>$user->legitimacy,
-            'group_id'=>$user->group_id
-        ]);
-        return redirect('/main');
+    function successlogin()
+    {
+        return view('main');
     }
-
-
+    
     function logout()
     {
         Session::flush();
