@@ -34,9 +34,7 @@
     </style>  
 </head>
 <body class="body-bg min-h-screen  pb-6 px-2 md:px-0 bg-gradient-to-r from-red-900 via-yellow-600 to-gray-500 background-animate" style="font-family:'Lato',sans-serif;">
-<?php
-    $auth = Auth::user()->auth;
-?>
+
 <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between rounded-lg">
     <div class="flex justify-between items-center ">
       <span class="text-2xl font-bold cursor-pointer">
@@ -53,7 +51,7 @@
         <select onchange="window.location.href=this.value;" class="text-2xl hover:text-yellow-500 duration-500 font-bold w-52">
             <option hidden value="" disabled selected >Feladatok</option>
             <optgroup label="User felületek">
-                <option value="{{route('calendar')}}">Race Calendar</option>
+                <option value="{{assett('calendar')}}">Race Calendar</option>
             </optgroup>
             @if ($user->legitimacy == 1)
                 <optgroup label="Admin felületek">
@@ -69,9 +67,7 @@
     </ul>
 </nav>
 
-<main class="max-w-6xl mx-auto p-8 md:p-12 my-10 rounded-lg">
-          <img src="https://i.imgur.com/LqjN9MU.png" class="max-w-full h-auto" alt="motogp logo" referrerpolicy="no-referrer" />
-    </main>
+
 
   <script>
     function Menu(e){

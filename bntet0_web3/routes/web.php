@@ -27,6 +27,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/calendar', [MainController::class, 'calendar'])->name('calendar');
         Route::get('/fileupload', [MainController::class, 'fileupload'])->name('fileupload');
         Route::get('/filegeneration', [MainController::class, 'filegeneration'])->name('filegeneration');
+
+        
         
     });
 

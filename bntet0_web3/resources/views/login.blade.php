@@ -47,6 +47,8 @@
         <section>
             <h3 class="font-bold text-2xl">Üdvözlöm a MotoGP adatbázisban</h3>
             <p class="text-gray-600 pt-2">Kérlek jelentkezz be.</p>
+            <p class="text-gray-600 pt-2">felhasználónév: admin</p>
+            <p class="text-gray-600 pt-2">jelszó: admin</p>
         </section>
 
         <section class="mt-10">
