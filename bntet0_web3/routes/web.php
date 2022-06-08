@@ -24,13 +24,23 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/main', [MainController::class, 'main']);
         Route::post('/main', [MainController::class, 'main']);
         Route::get('/logout', [MainController::class, 'logout']);
+        Route::get('/calendar', [MainController::class, 'calendar'])->name('calendar');
+        Route::get('/fileupload', [MainController::class, 'fileupload'])->name('fileupload');
+        Route::get('/filegeneration', [MainController::class, 'filegeneration'])->name('filegeneration');
         
     });
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {
         Route::get('/login', [MainController::class, 'login']);
+        Route::get('/calendar', [MainController::class, 'calendar'])->name('calendar');
+        Route::get('/login', function () {
+
+            $petani = DB::table('races')->get();
+        
+            return view('login', ['petani' => $petani]);
+        });
         Route::post('/checklogin', [MainController::class, 'checklogin']);
-        Route::get('/register', [RegisterController::class,'register']);
-        Route::post('/checkregister', [RegisterController::class, 'checkregister']);
+
+
     });
 });

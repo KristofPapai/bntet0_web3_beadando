@@ -45,7 +45,7 @@
 
     <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
         <section>
-            <h3 class="font-bold text-2xl">üdvözlöm a MotoGP adatbázisban</h3>
+            <h3 class="font-bold text-2xl">Üdvözlöm a MotoGP adatbázisban</h3>
             <p class="text-gray-600 pt-2">Kérlek jelentkezz be.</p>
         </section>
 
@@ -61,12 +61,33 @@
                     <input type="password" id="password" name="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" required value="">
                 </div>
                 <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" name="submit">Belépés</button>
+                
             </form>
         </section>
     </main>
 
-    <div class="max-w-lg mx-auto text-center mt-12 mb-6">
-        <p class="text-white">Nincs még fiókja? <a href="{{asset('register')}}" class="font-bold hover:underline">Regisztráció</a>.</p>
-    </div>
+    <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
+        <section>
+            <h3 class="font-bold text-2xl">Az aktuális szezon versenyei</h3>
+        </section>
+        <section class="mt-10">
+            <div>
+                <table class="border border-slate-400">
+                    <tr>
+                        <td class="border border-slate-300">Id</td>
+                        <td class="border border-slate-300">Race name</td>
+                        <td class="border border-slate-300">Race Location</td>
+                    </tr>
+                    @foreach ($petani as $key => $data)
+                    <tr>
+                        <td class="border border-slate-300">{{$data->id}}</td>
+                        <td class="border border-slate-300">{{$data->gpName}}</td>
+                        <td class="border border-slate-300">{{$data->gpLocation}}</td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

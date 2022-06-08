@@ -20,6 +20,21 @@ class MainController extends Controller
         $user = user::find(Auth::id());
         return view('main', ['user' => $user]);
     }
+    function calendar()
+    {
+        $user = user::find(Auth::id());
+        return view('calendar', ['user' => $user]);
+    }
+    function fileupload()
+    {
+        $user = user::find(Auth::id());
+        return view('fileupload', ['user' => $user]);
+    }
+    function filegeneration()
+    {
+        $user = user::find(Auth::id());
+        return view('filegeneration', ['user' => $user]);
+    }
 
 
     function checklogin(Request $request)
@@ -53,4 +68,5 @@ class MainController extends Controller
         Auth::logout();
         return redirect('/login');
     }
+
 }
