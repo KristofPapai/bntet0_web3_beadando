@@ -34,7 +34,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::group(['middleware' => [GuestMiddleware::class]], function() {
         Route::get('/login', [MainController::class, 'login']);
-        Route::get('/calendar', [MainController::class, 'calendar'])->name('calendar');
+        //Route::get('/racecalendar', [MainController::class, 'racecalendar'])->name('racecalendar');
         Route::get('/login', function () {
 
             $petani = DB::table('races')->get();
