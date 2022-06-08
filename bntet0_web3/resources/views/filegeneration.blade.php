@@ -53,12 +53,12 @@
         <select onchange="window.location.href=this.value;" class="text-2xl hover:text-yellow-500 duration-500 font-bold w-52">
             <option hidden value="" disabled selected >Feladatok</option>
             <optgroup label="User felületek">
-                <option value="{{route('calendar')}}">Race Calendar</option>
+                <option value="{{route('racecalendar')}}">Race Calendar</option>
             </optgroup>
             @if ($user->legitimacy == 1)
                 <optgroup label="Admin felületek">
-                  <option value="{{route('fileupload')}}">Fájlfeltöltés és megjelenítés</option>
-                  <option value="{{route('filegeneration')}}">Kimenet generálás</option>
+                  <option value="{{asset('fileupload')}}">Fájlfeltöltés és megjelenítés</option>
+                  <option value="{{asset('filegeneration')}}">Kimenet generálás</option>
                 </optgroup>
             @endif
         </select>

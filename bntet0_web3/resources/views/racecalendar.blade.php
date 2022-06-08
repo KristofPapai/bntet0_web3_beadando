@@ -52,7 +52,7 @@
       <li class="mx-4 my-6 md:my-0">
         <select onchange="window.location.href=this.value;" class="text-2xl hover:text-yellow-500 duration-500 font-bold w-52">
             <optgroup label="User felületek">
-                <option value="{{assett('racecalendar')}}">Race Calendar</option>
+                <option value="{{asset('racecalendar')}}">Race Calendar</option>
             </optgroup>
             @if ($user->legitimacy == 1)
                 <optgroup label="Admin felületek">

@@ -20,10 +20,10 @@ class MainController extends Controller
         $user = user::find(Auth::id());
         return view('main', ['user' => $user]);
     }
-    public function calendar()
+    public function racecalendar()
     {
         $user = user::find(Auth::id());
-        return view('calendar', ['user' => $user]);
+        return view('racecalendar', ['user' => $user]);
     }
     public function fileupload()
     {
